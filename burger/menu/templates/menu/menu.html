@@ -26,141 +26,44 @@
                     </div>
                 </div>
             </div>
+            
+{#            Меню с бургерами, поместить в цикл#}
+
+
+
             <div class="row">
+                {% for burger in burgers %}
                 <div class="col-xl-6 col-md-6 col-lg-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
-                            <img src="img/burger/1.png" alt="">
+                            <img src="{{ burger.burger_image.url }}" alt="">
                         </div>
                         <div class="info">
-                            <h3>Beefy Burgers</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
+                            <h3>{{ burger.name }}</h3>
+                            <p>{{ burger.discription }}</p>
+                            <span>${{ burger.price }}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="img/burger/2.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Burger Boys</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                        </div>
-                    </div>
+                {% endfor %}
 
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="img/burger/3.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Burger Bizz</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-md-6 col-lg-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="img/burger/4.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Crackles Burger</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="img/burger/5.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Bull Burgers</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="img/burger/6.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Rocket Burgers</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="img/burger/7.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Smokin Burger</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="img/burger/8.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Delish Burger</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-md-6 col-lg-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="img/burger/4.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Crackles Burger</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_delicious d-flex align-items-center">
-                        <div class="thumb">
-                            <img src="img/burger/5.png" alt="">
-                        </div>
-                        <div class="info">
-                            <h3>Bull Burgers</h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
-                        </div>
-                    </div>
-
-                </div>
             </div>
+
+
+
+
         </div>
     </div>
     <!-- best_burgers_area_end  -->
 
+{#    эти два бургера тоже в цикл, как бургер дня#}
+    
     <!-- features_room_startt -->
     <div class="Burger_President_area">
             <div class="Burger_President_here">
                 <div class="single_Burger_President">
                     <div class="room_thumb">
-                        <img src="img/burgers/1.png" alt="">
+                        <img src="{% static 'img/burgers/1.png' %}" alt="">
                         <div class="room_heading d-flex justify-content-between align-items-center">
                             <div class="room_heading_inner">
                                 <span>$20</span>
@@ -174,7 +77,7 @@
                 </div>
                 <div class="single_Burger_President">
                     <div class="room_thumb">
-                        <img src="img/burgers/2.png" alt="">
+                        <img src="{% static 'img/burgers/2.png' %}" alt="">
                         <div class="room_heading d-flex justify-content-between align-items-center">
                             <div class="room_heading_inner">
                                 <span>$20</span>
@@ -285,13 +188,15 @@
 </div>
 <!-- testimonial_area_ned  -->
 
+    
+    
     <!-- instragram_area_start -->
     <div class="instragram_area">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="single_instagram">
-                    <img src="img/instragram/1.png" alt="">
+                    <img src="{% static 'img/instragram/1.png' %}" alt="">
                     <div class="ovrelay">
                         <a href="#">
                             <i class="fa fa-instagram"></i>
@@ -301,7 +206,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="single_instagram">
-                    <img src="img/instragram/2.png" alt="">
+                    <img src="{% static 'img/instragram/2.png' %}" alt="">
                     <div class="ovrelay">
                         <a href="#">
                             <i class="fa fa-instagram"></i>
@@ -311,7 +216,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="single_instagram">
-                    <img src="img/instragram/3.png" alt="">
+                    <img src="{% static 'img/instragram/3.png' %}" alt="">
                     <div class="ovrelay">
                         <a href="#">
                             <i class="fa fa-instagram"></i>
@@ -321,7 +226,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="single_instagram">
-                    <img src="img/instragram/4.png" alt="">
+                    <img src="{% static 'img/instragram/4.png' %}" alt="">
                     <div class="ovrelay">
                         <a href="#">
                             <i class="fa fa-instagram"></i>
@@ -333,95 +238,6 @@
     </div>
     </div>
     <!-- instragram_area_end -->
-
-    <!-- footer_start  -->
-    <footer class="footer">
-            <div class="footer_top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-4 col-md-6 col-lg-4">
-                            <div class="footer_widget text-center ">
-                                <h3 class="footer_title pos_margin">
-                                        New York
-                                </h3>
-                                <p>5th flora, 700/D kings road, <br> 
-                                        green lane New York-1782 <br>
-                                        <a href="#">info@burger.com</a></p>
-                                <a class="number" href="#">+10 378 483 6782</a>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6 col-lg-4">
-                            <div class="footer_widget text-center ">
-                                <h3 class="footer_title pos_margin">
-                                    California
-                                </h3>
-                                <p>5th flora, 700/D kings road, <br> 
-                                        green lane New York-1782 <br>
-                                        <a href="#">info@burger.com</a></p>
-                                <a class="number" href="#">+10 378 483 6782</a>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-12 col-lg-4">
-                                <div class="footer_widget">
-                                        <h3 class="footer_title">
-                                                Stay Connected
-                                        </h3>
-                                        <form action="#" class="newsletter_form">
-                                            <input type="text" placeholder="Enter your mail">
-                                            <button type="submit">Sign Up</button>
-                                        </form>
-                                        <p class="newsletter_text">Stay connect with us to get exclusive offer!</p>
-                                    </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4">
-                            <div class="socail_links text-center">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-twitter-alt"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ti-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copy-right_text">
-                <div class="container">
-                    <div class="footer_border"></div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <p class="copy_right text-center">
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </footer>
-    <!-- footer_end  -->
 
 
 </body>

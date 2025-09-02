@@ -1,9 +1,24 @@
 from django.shortcuts import render
 
+from menu.models import Menu
+
+
 # Create your views here.
 
 def index(request):
-    return render(request, 'menu/index.html')
+    burgers = Menu.objects.all()
+
+    context = {
+        'burgers': burgers
+    }
+
+    return render(request, 'menu/index.html', context)
 
 def menu(request):
-    return render(request, 'menu/menu.html')
+    burgers = Menu.objects.all()
+
+    context = {
+        'burgers': burgers
+    }
+
+    return render(request, 'menu/menu.html', context)
